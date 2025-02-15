@@ -3,36 +3,33 @@ const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('mins');
 const secondsEl = document.getElementById('seconds');
 
+// Calcola la data del prossimo 31 dicembre
+const currentYear = new Date().getFullYear();
+const newYears = `25 Dec ${currentYear}`;
 
-const newYears = '25 Dec 2024';
-
-function countdown () {
+function countdown() {
     const newYearsDate = new Date(newYears);
-    const currentDate =  new Date;
+    const currentDate = new Date();
 
-    const totalSeconds = new Date (newYearsDate - currentDate) / 1000;
+    const totalSeconds = (newYearsDate - currentDate) / 1000;
 
-    const days = Math.floor(totalSeconds / 3600 / 24);      //(Interger number), calculate the days remaining for the countdown
-    const hours = Math.floor(totalSeconds / 3600) % 24;     //calculate remaining hour to 24hours cycle
-    const mins = Math.floor(totalSeconds / 60) % 60;     //calculate remaining minutes to 1hour cycle
-    const seconds = Math.floor(totalSeconds) % 60;          //calculate remaining seconds to 1minute cycle
-                                                            //%x number, ritorna il valore per quante volte è divisibile; 8 % 3 = 2
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const mins = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
+
     daysEl.innerHTML = days;
     hoursEl.innerHTML = formatTime(hours);
     minsEl.innerHTML = formatTime(mins);
-    secondsEl.innerHTML = formatTime(seconds); //get the data for the clock
-
-
-    // console.log(hours,days, mins, seconds)
+    secondsEl.innerHTML = formatTime(seconds);
 }
 
 function formatTime(time) {
     return time < 10 ? `0${time}` : time;
 }
 
-// initial call
-
+// Chiamata iniziale
 countdown();
 
-setInterval(countdown, 1000) //1000ms of update = 1s update
-
+// Aggiorna il countdown ogni secondo
+setInterval(countdown, 1000);
