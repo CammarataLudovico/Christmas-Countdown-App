@@ -17,31 +17,100 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 1.8rem;
     line-height: 1;
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .countdown-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    padding: 0 1rem;
+}
+
+.countdown-el {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    width: 8rem; /* Usa rem per la larghezza */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .big-text {
     font-weight: bold;
-    font-size: 6rem;
+    font-size: 4rem;
     line-height: 1;
 }
 
-.countdown-el {
-    text-align: center;  /* Allinea le parole "days-hours-mins-seconds" con il valore */
+.countdown-el span {
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 0.5rem;
 }
 
-.countdown-el span {
-    font-size: 2.5rem;
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .countdown-container {
+        gap: 1.5rem;
+    }
+
+    .big-text {
+        font-size: 3rem;
+    }
+
+    .countdown-el {
+        width: 6rem; /* Utilizzo rem */
+        padding: 1.5rem;
+    }
+
+    .countdown-el span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .countdown-container {
+        gap: 1rem;
+    }
+
+    .big-text {
+        font-size: 2.5rem;
+    }
+
+    .countdown-el {
+        width: 5rem; /* Utilizzo rem */
+        padding: 1rem;
+    }
+
+    .countdown-el span {
+        font-size: 0.9rem;
+    }
 }
