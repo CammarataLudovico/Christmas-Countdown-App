@@ -28,19 +28,18 @@ h2 {
 
 .countdown-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
 }
 
 .big-text {
     font-weight: bold;
     font-size: 6rem;
     line-height: 1;
-    margin: 0 2rem;
 }
 
 .countdown-el {
-    text-align: center;  /* align the words, days-hours-mins-seconds with the value */
+    text-align: center;  /* Allinea le parole "days-hours-mins-seconds" con il valore */
 }
 
 .countdown-el span {
